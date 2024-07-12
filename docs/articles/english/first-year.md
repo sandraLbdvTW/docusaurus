@@ -11,9 +11,9 @@ Starting my second year, I noticed that my planning got better. Finally, I could
 
 ## Take your time
 
-Saying that I would complete a 4-hour task in two hours never impressed anyone but almost always made me work overtime. Fear of telling a longer estimated time leads to failed deadlines. Failed deadlines lead to resentment from the team.
+Saying that I would complete a 4-hour task in two hours never impressed anyone but almost always made me work overtime. 
 
-The slower but predictable developer is much better for teamwork than the unpredictable one. Even if sometimes they, in fact, complete tasks in the underestimated time.
+Fear of telling a longer estimated time leads to failed deadlines. Failed deadlines lead to resentment from the team. The slower but predictable developer is much better for teamwork than the unpredictable one. Even if, in fact, they sometimes complete tasks in the underestimated time
 
 Don’t underestimate tasks.
 
@@ -27,9 +27,9 @@ Give yourself a deadline that will help you understand when it’s time to get h
 
 When you go to your mentor with some questions about a task, be ready for their questions:
 
-What have you tried?
-What exactly couldn't you do?
-How have you tried to solve the problem?
+- What have you tried?
+- What exactly couldn't you do?
+- How have you tried to solve the problem?
 
 Don’t be afraid to show non-working code. It will prove that you’ve searched for a solution.
 
@@ -45,7 +45,7 @@ Good programmers understand that their job is to solve problems in a reasonable 
 
 When I started, my job didn’t ask me to track my task time. Until they did. And I had no idea how to estimate tasks other than "when it's done, it's done".
 
-Even if you are not asked, track your time, so you can plan your work in the future.
+Even if you are not asked, track your time, so you can plan your future work.
 
 ## Decompose until it’s clear
 
@@ -53,7 +53,7 @@ The senior developers that I worked with could estimate tasks surprisingly well.
 
 I knew that I could only evaluate small tasks. I came to a very meticulous style of describing things that I have to do. Sometimes my subtasks are just 15-20 minutes long, but it helps to  plan more accurately.
 
-Even if you don’t have to decompose your tasks in the task manager, create a step-by-step plan in a notebook. Plus, you can run this list by your mentor if you have some doubts about the plan.
+Even if you don’t have to decompose your tasks in a task manager, create a step-by-step plan in a notebook. Plus, you can run this list by your mentor if you have some doubts about the plan.
 
 ## Task description can be wrong
 

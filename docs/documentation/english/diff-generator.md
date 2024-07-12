@@ -6,7 +6,7 @@ description: Command-line tool to compare configuration files.
 ___
 ## Overview
 
-[Diff Generator](https://github.com/sandraLbdvTW/diff-generator) is a command-line utility that allows users to find the differences between two configuration files. This tool supports multiple file formats and output formats out of the box. 
+[Diff Generator](https://github.com/sandraLbdvTW/diff-generator) is a command-line utility that allows users to find the differences between two configuration files. This tool supports multiple file formats and output styles out of the box. 
 
 Diff Generator supports the following file formats:
 - JSON
@@ -68,7 +68,7 @@ The following table contains all the possible options for the script:
 
 ## Examples
 
-These examples will use the sample Diff Generator files. You can find these files in `./__fixtures__/`. 
+These examples will use the sample Diff Generator files. You can find these files in `./__fixtures__/`. You can edit the sample files or replace them with your own.
 
 ### Compare two JSON files and generate the report in plain format
 
