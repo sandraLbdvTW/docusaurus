@@ -21,3 +21,14 @@
   align-items: center;
   justify-content: center;
 }
+
+.copyright {
+  display: flex;
+  justify-content: flex-end;
+
+  margin: 0 5px 5px;
+
+  font-size: 70%;
+  color: gray;
+  opacity: 60%;
+}

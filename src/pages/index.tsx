@@ -19,8 +19,8 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
+            to="/docs/category/на-английском">
+            Какую?
           </Link>
         </div>
       </div>
@@ -32,11 +32,14 @@ export default function Home(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Test from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`Портфолио`}
+      description="Портфолио Лебедева Александра">
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+        <HomepageFeatures/>
+        <div className={styles.copyright}>
+          Иллюстрации:&nbsp;<a href="https://icons8.com/">Icons8</a>
+        </div>
       </main>
     </Layout>
   );

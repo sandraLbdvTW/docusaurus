@@ -1,0 +1,154 @@
+---
+description: Консольная утилита для сравнения конфигурационных файлов.
+---
+
+# Вычислитель Отличий
+___
+
+## Введение
+
+[Вычислитель Отличий](https://github.com/sandraLbdvTW/diff-generator) — это консольное приложение, которое сравнивает содержание двух конфигурационных файлов и формирует отчет о различиях между ними. 
+
+Программа работает с тремя типами файлов:
+- JSON
+- YAML
+- INI
+
+Отчет можно сформировать в одном из трех видов:
+- plain
+- tree
+- JSON
+
+## Быстрый старт
+
+:::info[Предварительные условия]
+- Знакомство с командной строкой
+- Установленная [Node.js](https://nodejs.org/en) версии 8.0 или выше
+:::
+
+### Установка
+
+1. Клонируйте репозиторий:
+```bash
+git clone https://github.com/sandraLbdvTW/diff-generator.git
+```
+
+2. Перейдите в корневую директорию проекта:
+```bash
+cd diff-generator
+```
+
+3. Установите зависимости:
+```bash
+npm install
+```
+
+4. Скомпилируйте файлы проекта:
+```bash
+npx babel src --out-dir dist
+```
+
+
+### Использование
+
+Чтобы использовать Вычислитель Отличий, запустите скрипт с нужными параметрами.
+
+#### Основной синтаксис
+```bash
+npx gendiff [options] <filepath1> <filepath2>
+```
+
+#### Опции
+При запуске скрипта можно использовать дополнительные опции:
+
+| Опция                                | Описание                                                         |
+|--------------------------------------|------------------------------------------------------------------|
+| ` -h`,` --help            `          | Показать справку.                                                |
+| ` -f <format>`,` --format <format> ` | Указать формат вывода (plain, tree, JSON). По умолчанию — plain. |
+| ` -V`,` --version         `          | Показать номер версии программы.                                 |
+
+## Примеры
+
+В примерах используются тестовые файлы проекта. Эти файлы можно найти в директории `./__fixtures__/`. Вы можете отредактировать тестовые файлы или поменять их на свои.
+
+### Сравнить файлы формата JSON и показать отчет в формате plain
+
+#### Команда
+```bash
+npx gendiff ./__fixtures__/before.json ./__fixtures__/after.json
+```
+
+#### Результат
+```text
+Property 'common.follow' was added with value: false
+Property 'common.setting2' was deleted
+Property 'common.setting3' was changed from true to [complex value]
+Property 'common.setting4' was added with value: 'blah blah'
+Property 'common.setting5' was added with value: [complex value]
+Property 'common.setting6.ops' was added with value: 'vops'
+Property 'group1.baz' was changed from 'bas' to 'bars'
+Property 'group1.nest' was changed from [complex value] to 'str'
+Property 'group2' was deleted
+Property 'group3' was added with value: [complex value]
+```
+
+### Сравнить файлы формата INI и показать отчет в формате tree
+
+#### Команда
+```bash
+npx gendiff ./__fixtures__/before.ini ./__fixtures__/after.ini -f tree
+```
+
+#### Результат
+```text
+{
+    common: {
+      + follow: false
+        setting1: Value 1
+      - setting2: 200
+      - setting3: true
+      + setting3: {
+            key: value
+        }
+      + setting4: blah blah
+      + setting5: {
+            key5: value5
+        }
+        setting6: {
+            key: value
+          + ops: vops
+        }
+    }
+    group1: {
+      - baz: bas
+      + baz: bars
+        foo: bar
+      - nest: {
+            key: value
+        }
+      + nest: str
+    }
+  - group2: {
+        abc: 12345
+    }
+  + group3: {
+        fee: 100500
+    }
+}
+
+```
+
+### Сравнить файлы формата YAML и показать отчет в формате JSON
+
+#### Команда
+```bash
+npx gendiff ./__fixtures__/before.yml ./__fixtures__/after.yml -f json
+```
+
+#### Результат
+```text
+[{"name":"common","status":"hasChildren","children":[{"name":"follow","status":"added","valueNew":false},{"name":"setting1","status":"unmodified","valueOld":"Value 1","valueNew":"Value 1"},{"name":"setting2","status":"deleted","valueOld":"200"},{"name":"setting3","status":"modified","valueOld":true,"valueNew":{"key":"value"}},{"name":"setting4","status":"added","valueNew":"blah blah"},{"name":"setting5","status":"added","valueNew":{"key5":"value5"}},{"name":"setting6","status":"hasChildren","children":[{"name":"key","status":"unmodified","valueOld":"value","valueNew":"value"},{"name":"ops","status":"added","valueNew":"vops"}]}]},{"name":"group1","status":"hasChildren","children":[{"name":"baz","status":"modified","valueOld":"bas","valueNew":"bars"},{"name":"foo","status":"unmodified","valueOld":"bar","valueNew":"bar"},{"name":"nest","status":"modified","valueOld":{"key":"value"},"valueNew":"str"}]},{"name":"group2","status":"deleted","valueOld":{"abc":"12345"}},{"name":"group3","status":"added","valueNew":{"fee":"100500"}}]
+```
+
+## Поддержка
+Если вы столкнулись с проблемой, опишите её на [GitHub](https://github.com/sandraLbdvTW/diff-generator/issues).
