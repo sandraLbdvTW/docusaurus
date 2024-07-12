@@ -37,9 +37,6 @@ export default function Home(): JSX.Element {
       <HomepageHeader />
       <main>
         <HomepageFeatures/>
-        <div className={styles.copyright}>
-          Иллюстрации:&nbsp;<a href="https://icons8.com/">Icons8</a>
-        </div>
       </main>
     </Layout>
   );
