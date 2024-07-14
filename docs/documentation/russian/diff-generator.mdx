@@ -2,12 +2,15 @@
 description: Консольная утилита для сравнения конфигурационных файлов.
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Вычислитель Отличий
 ___
 
 ## Введение
 
-[Вычислитель Отличий](https://github.com/sandraLbdvTW/diff-generator) — это консольное приложение, которое сравнивает содержание двух конфигурационных файлов и формирует отчет о различиях между ними. 
+[Вычислитель Отличий](https://github.com/sandraLbdvTW/diff-generator) — это консольное приложение, которое сравнивает содержание двух конфигурационных файлов и формирует отчет о различиях между ними.
 
 Программа работает с тремя типами файлов:
 - JSON
@@ -15,23 +18,33 @@ ___
 - INI
 
 Отчет можно сформировать в одном из трех видов:
-- plain
-- tree
-- JSON
+- [plain](#plain)
+- [tree](#tree)
+- [JSON](#json)
 
 ## Быстрый старт
 
 :::info[Предварительные условия]
-- Знакомство с командной строкой
+- Знание основ командной строки
+- Знание основ Git
 - Установленная [Node.js](https://nodejs.org/en) версии 8.0 или выше
 :::
 
 ### Установка
 
 1. Клонируйте репозиторий:
-```bash
-git clone https://github.com/sandraLbdvTW/diff-generator.git
-```
+<Tabs>
+   <TabItem value="HTTPS">
+      ```bash
+      git clone https://github.com/sandraLbdvTW/diff-generator.git
+      ```
+    </TabItem>
+    <TabItem value="SSH">
+      ```bash
+      git@github.com:sandraLbdvTW/diff-generator.git
+      ```
+    </TabItem>
+</Tabs>
 
 2. Перейдите в корневую директорию проекта:
 ```bash
@@ -78,7 +91,7 @@ npx gendiff [options] <filepath1> <filepath2>
 npx gendiff ./__fixtures__/before.json ./__fixtures__/after.json
 ```
 
-#### Результат
+#### Результат {#plain}
 ```text
 Property 'common.follow' was added with value: false
 Property 'common.setting2' was deleted
@@ -99,7 +112,7 @@ Property 'group3' was added with value: [complex value]
 npx gendiff ./__fixtures__/before.ini ./__fixtures__/after.ini -f tree
 ```
 
-#### Результат
+#### Результат {#tree}
 ```text
 {
     common: {
@@ -145,7 +158,7 @@ npx gendiff ./__fixtures__/before.ini ./__fixtures__/after.ini -f tree
 npx gendiff ./__fixtures__/before.yml ./__fixtures__/after.yml -f json
 ```
 
-#### Результат
+#### Результат {#json}
 ```text
 [{"name":"common","status":"hasChildren","children":[{"name":"follow","status":"added","valueNew":false},{"name":"setting1","status":"unmodified","valueOld":"Value 1","valueNew":"Value 1"},{"name":"setting2","status":"deleted","valueOld":"200"},{"name":"setting3","status":"modified","valueOld":true,"valueNew":{"key":"value"}},{"name":"setting4","status":"added","valueNew":"blah blah"},{"name":"setting5","status":"added","valueNew":{"key5":"value5"}},{"name":"setting6","status":"hasChildren","children":[{"name":"key","status":"unmodified","valueOld":"value","valueNew":"value"},{"name":"ops","status":"added","valueNew":"vops"}]}]},{"name":"group1","status":"hasChildren","children":[{"name":"baz","status":"modified","valueOld":"bas","valueNew":"bars"},{"name":"foo","status":"unmodified","valueOld":"bar","valueNew":"bar"},{"name":"nest","status":"modified","valueOld":{"key":"value"},"valueNew":"str"}]},{"name":"group2","status":"deleted","valueOld":{"abc":"12345"}},{"name":"group3","status":"added","valueNew":{"fee":"100500"}}]
 ```

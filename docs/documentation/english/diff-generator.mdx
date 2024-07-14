@@ -2,11 +2,14 @@
 description: Command-line tool to compare configuration files.
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Diff Generator
 ___
 ## Overview
 
-[Diff Generator](https://github.com/sandraLbdvTW/diff-generator) is a command-line utility that allows users to find the differences between two configuration files. This tool supports multiple file formats and output styles out of the box. 
+[Diff Generator](https://github.com/sandraLbdvTW/diff-generator) is a command-line application that allows users to find the differences between two configuration files. This tool supports multiple file formats and output styles out of the box.
 
 Diff Generator supports the following file formats:
 - JSON
@@ -14,24 +17,34 @@ Diff Generator supports the following file formats:
 - INI
 
 Diff Generator can generate reports in the following formats:
-- plain
-- tree
-- JSON
+- [plain](#plain)
+- [tree](#tree)
+- [JSON](#json)
 
 ## Getting started
 
 :::info[Prerequisites]
 - Familiarity with the command line
-- Install [Node.js](https://nodejs.org/en) version 8.0 or higher
+- Familiarity with Git
+- Installed [Node.js](https://nodejs.org/en) version 8.0 or higher
 :::
 
 ### Installation
 
 Take the following steps to install Diff Generator:
 1. Clone the repository:
-```bash
-git clone https://github.com/sandraLbdvTW/diff-generator.git
-```
+<Tabs>
+    <TabItem value="HTTPS">
+      ```bash
+      git clone https://github.com/sandraLbdvTW/diff-generator.git
+      ```
+    </TabItem>
+    <TabItem value="SSH">
+      ```bash
+      git@github.com:sandraLbdvTW/diff-generator.git
+      ```
+    </TabItem>
+</Tabs>
 
 2. Navigate to the project directory:
 ```bash
@@ -68,7 +81,7 @@ The following table contains all the possible options for the script:
 
 ## Examples
 
-These examples will use the sample Diff Generator files. You can find these files in `./__fixtures__/`. You can edit the sample files or replace them with your own.
+These examples use the sample Diff Generator files. You can find these files in `./__fixtures__/`, if you want to edit them or replace them with your own.
 
 ### Compare two JSON files and generate the report in plain format
 
@@ -77,7 +90,7 @@ These examples will use the sample Diff Generator files. You can find these file
 npx gendiff ./__fixtures__/before.json ./__fixtures__/after.json
 ```
 
-#### Result
+#### Result {#plain}
 ```text
 Property 'common.follow' was added with value: false
 Property 'common.setting2' was deleted
@@ -98,7 +111,7 @@ Property 'group3' was added with value: [complex value]
 npx gendiff ./__fixtures__/before.ini ./__fixtures__/after.ini -f tree
 ```
 
-#### Result
+#### Result {#tree}
 ```text
 {
     common: {
@@ -144,7 +157,7 @@ npx gendiff ./__fixtures__/before.ini ./__fixtures__/after.ini -f tree
 npx gendiff ./__fixtures__/before.yml ./__fixtures__/after.yml -f json
 ```
 
-#### Result
+#### Result {#json}
 ```text
 [{"name":"common","status":"hasChildren","children":[{"name":"follow","status":"added","valueNew":false},{"name":"setting1","status":"unmodified","valueOld":"Value 1","valueNew":"Value 1"},{"name":"setting2","status":"deleted","valueOld":"200"},{"name":"setting3","status":"modified","valueOld":true,"valueNew":{"key":"value"}},{"name":"setting4","status":"added","valueNew":"blah blah"},{"name":"setting5","status":"added","valueNew":{"key5":"value5"}},{"name":"setting6","status":"hasChildren","children":[{"name":"key","status":"unmodified","valueOld":"value","valueNew":"value"},{"name":"ops","status":"added","valueNew":"vops"}]}]},{"name":"group1","status":"hasChildren","children":[{"name":"baz","status":"modified","valueOld":"bas","valueNew":"bars"},{"name":"foo","status":"unmodified","valueOld":"bar","valueNew":"bar"},{"name":"nest","status":"modified","valueOld":{"key":"value"},"valueNew":"str"}]},{"name":"group2","status":"deleted","valueOld":{"abc":"12345"}},{"name":"group3","status":"added","valueNew":{"fee":"100500"}}]
 ```

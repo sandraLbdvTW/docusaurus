@@ -21,7 +21,9 @@ Don’t underestimate tasks.
 
 There were times when I spent half of my day without any significant result. I was scared to ask for help and therefore to let my mentor know that I wasted a few hours. And then I spent another half of the day trying to solve the same problem, finally asked for help and had to admit that I wasted the whole day.
 
-Give yourself a deadline that will help you understand when it’s time to get help. And remember that admitting your problems to the senior developer is much better than giving yourself excuses in front of your whole team at the next daily meeting.
+Set a deadline for yourself to know when it's time to get help. If there is no progress after 30-60 minutes of work, go to your mentor. If you're unsure about a reasonable deadline, ask your mentor to provide one.
+
+And remember that admitting your problems to the senior developer is much better than giving yourself excuses in front of your whole team at the next daily meeting.
 
 ## Show what you’ve done
 
@@ -37,7 +39,7 @@ Don’t be afraid to show non-working code. It will prove that you’ve searched
 
 Some programmers think that their job is to solve problems in the most exciting way. These programmers often bruise their ego by having to meet deadlines.
 
-If you need a couple of days to write your own component, but you can achieve the same result in two hours by using a popular library, use your common sense.
+If you need a couple of days to write your own component, but you can achieve the same result in two hours by using a popular library, use your common sense. Are there any benefits to wasting your time on additional coding and bug fixing? Will your implementation require much more time from testers?
 
 Good programmers understand that their job is to solve problems in a reasonable time.
 
