@@ -37,9 +37,15 @@ Don’t be afraid to show non-working code. It will prove that you’ve searched
 
 ## Good and fast beats perfect and slow
 
+When I work on the task, I start by meeting the task requirements. Once I meet those, I start working on improvements. Now, I understand to open a pull request after this step, but there were times when I started to improve the improvements. I wanted my code to be perfect and, apparently, I didn't want to deliver it on time. 
+
+There comes a point when further code improvements no longer enhance the user experience. Don't miss it.
+
+## Use existing solutions
+
 Some programmers think that their job is to solve problems in the most exciting way. These programmers often bruise their ego by having to meet deadlines.
 
-If you need a couple of days to write your own component, but you can achieve the same result in two hours by using a popular library, use your common sense. Are there any benefits to wasting your time on additional coding and bug fixing? Will your implementation require much more time from testers?
+If you need a couple of days to write your own component, but you can achieve the same result in two hours by using a popular library, use your common sense. Are there any benefits to wasting your time on additional coding and bug fixing? Will your implementation require much more time from testers? 
 
 Good programmers understand that their job is to solve problems in a reasonable time.
 
